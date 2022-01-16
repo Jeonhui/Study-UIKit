@@ -9,14 +9,20 @@ import UIKit
 
 protocol EditDeligate{
     func didMessageEditDone(_ controller: EditViewController, message: String)
+    func didImageOnOffDone(_ controller:EditViewController, isOn:Bool)
+    func didImageZoomDone(_ controller:EditViewController, isZoom:Bool)
 }
 
 class EditViewController: UIViewController {
     var textWayValue: String = ""
     var textMessage: String = ""
     var delegate: EditDeligate?
-
-
+    
+    var isOn = false
+    var isZoom = true
+    
+    @IBOutlet var ZoomIsOn: UISwitch!
+    @IBOutlet var swIsOn: UISwitch!
     @IBOutlet var lblWay: UILabel!
     @IBOutlet var txtMessage: UITextField!
 
@@ -25,16 +31,35 @@ class EditViewController: UIViewController {
         // Do any additional setup after loading the view.
         lblWay.text = textWayValue
         txtMessage.text = textMessage
+        swIsOn.isOn = isOn
+        ZoomIsOn.isOn = isZoom
     }
     
     @IBAction func btnDone(_ sender: UIButton) {
         if delegate != nil{
             delegate?.didMessageEditDone(self, message: txtMessage.text!)
+            delegate?.didImageOnOffDone(self, isOn: self.isOn)
+            delegate?.didImageZoomDone(self, isZoom: self.isZoom)
         }
         _ = navigationController?.popViewController(animated: true)
     }
     
-
+    @IBAction func swImageOnOff(_ sender: UISwitch) {
+        if sender.isOn{
+            isOn = true
+        }else{
+            isOn = false
+        }
+    }
+    
+    @IBAction func swZoomChange(_ sender: UISwitch) {
+        if sender.isOn{
+            isZoom = true
+        }else{
+            isZoom = false
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
