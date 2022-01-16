@@ -14,6 +14,10 @@
 		A54B3EA127945D35005DFC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54B3EA027945D35005DFC60 /* Assets.xcassets */; };
 		A54B3EA427945D35005DFC60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54B3EA227945D35005DFC60 /* LaunchScreen.storyboard */; };
 		A54B3EAC279467F0005DFC60 /* Kokain_initio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A54B3EAB279467F0005DFC60 /* Kokain_initio.mp3 */; };
+		A54B3EB127947926005DFC60 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = A54B3EAD27947926005DFC60 /* play.png */; };
+		A54B3EB227947926005DFC60 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = A54B3EAE27947926005DFC60 /* pause.png */; };
+		A54B3EB327947926005DFC60 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = A54B3EAF27947926005DFC60 /* record.png */; };
+		A54B3EB427947926005DFC60 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = A54B3EB027947926005DFC60 /* stop.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		A54B3EA327945D35005DFC60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A54B3EA527945D35005DFC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A54B3EAB279467F0005DFC60 /* Kokain_initio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Kokain_initio.mp3; sourceTree = "<group>"; };
+		A54B3EAD27947926005DFC60 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		A54B3EAE27947926005DFC60 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		A54B3EAF27947926005DFC60 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
+		A54B3EB027947926005DFC60 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 		A54B3E9627945D33005DFC60 /* ch13 audio */ = {
 			isa = PBXGroup;
 			children = (
+				A54B3EAE27947926005DFC60 /* pause.png */,
+				A54B3EAD27947926005DFC60 /* play.png */,
+				A54B3EAF27947926005DFC60 /* record.png */,
+				A54B3EB027947926005DFC60 /* stop.png */,
 				A54B3EAB279467F0005DFC60 /* Kokain_initio.mp3 */,
 				A54B3E9727945D33005DFC60 /* AppDelegate.swift */,
 				A54B3E9927945D33005DFC60 /* SceneDelegate.swift */,
@@ -129,6 +141,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54B3EA427945D35005DFC60 /* LaunchScreen.storyboard in Resources */,
+				A54B3EB427947926005DFC60 /* stop.png in Resources */,
+				A54B3EB127947926005DFC60 /* play.png in Resources */,
+				A54B3EB327947926005DFC60 /* record.png in Resources */,
+				A54B3EB227947926005DFC60 /* pause.png in Resources */,
 				A54B3EA127945D35005DFC60 /* Assets.xcassets in Resources */,
 				A54B3E9F27945D33005DFC60 /* Main.storyboard in Resources */,
 				A54B3EAC279467F0005DFC60 /* Kokain_initio.mp3 in Resources */,
