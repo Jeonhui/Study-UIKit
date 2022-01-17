@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A550A8992795C7BE00667707 /* Fireworks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A550A8932795C7BE00667707 /* Fireworks.jpg */; };
+		A550A89A2795C7BE00667707 /* Mountaineering.mov in Resources */ = {isa = PBXBuildFile; fileRef = A550A8942795C7BE00667707 /* Mountaineering.mov */; };
+		A550A89B2795C7BE00667707 /* Mountaineering.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A550A8952795C7BE00667707 /* Mountaineering.jpg */; };
+		A550A89C2795C7BE00667707 /* Seascape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A550A8962795C7BE00667707 /* Seascape.jpg */; };
+		A550A89D2795C7BE00667707 /* FastTyping.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A550A8972795C7BE00667707 /* FastTyping.mp4 */; };
+		A550A89E2795C7BE00667707 /* FastTyping.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A550A8982795C7BE00667707 /* FastTyping.jpg */; };
 		A5D4F8DD27955D76006AF150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4F8DC27955D76006AF150 /* AppDelegate.swift */; };
 		A5D4F8DF27955D76006AF150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4F8DE27955D76006AF150 /* SceneDelegate.swift */; };
 		A5D4F8E127955D76006AF150 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4F8E027955D76006AF150 /* ViewController.swift */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A550A8932795C7BE00667707 /* Fireworks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Fireworks.jpg; sourceTree = "<group>"; };
+		A550A8942795C7BE00667707 /* Mountaineering.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Mountaineering.mov; sourceTree = "<group>"; };
+		A550A8952795C7BE00667707 /* Mountaineering.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mountaineering.jpg; sourceTree = "<group>"; };
+		A550A8962795C7BE00667707 /* Seascape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Seascape.jpg; sourceTree = "<group>"; };
+		A550A8972795C7BE00667707 /* FastTyping.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FastTyping.mp4; sourceTree = "<group>"; };
+		A550A8982795C7BE00667707 /* FastTyping.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FastTyping.jpg; sourceTree = "<group>"; };
 		A5D4F8D927955D76006AF150 /* ch14 MoviePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ch14 MoviePlayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D4F8DC27955D76006AF150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D4F8DE27955D76006AF150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +68,12 @@
 		A5D4F8DB27955D76006AF150 /* ch14 MoviePlayer */ = {
 			isa = PBXGroup;
 			children = (
+				A550A8982795C7BE00667707 /* FastTyping.jpg */,
+				A550A8972795C7BE00667707 /* FastTyping.mp4 */,
+				A550A8932795C7BE00667707 /* Fireworks.jpg */,
+				A550A8952795C7BE00667707 /* Mountaineering.jpg */,
+				A550A8942795C7BE00667707 /* Mountaineering.mov */,
+				A550A8962795C7BE00667707 /* Seascape.jpg */,
 				A5D4F8DC27955D76006AF150 /* AppDelegate.swift */,
 				A5D4F8DE27955D76006AF150 /* SceneDelegate.swift */,
 				A5D4F8E027955D76006AF150 /* ViewController.swift */,
@@ -125,8 +143,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A550A8992795C7BE00667707 /* Fireworks.jpg in Resources */,
 				A5D4F8E927955D78006AF150 /* LaunchScreen.storyboard in Resources */,
+				A550A89A2795C7BE00667707 /* Mountaineering.mov in Resources */,
 				A5D4F8E627955D78006AF150 /* Assets.xcassets in Resources */,
+				A550A89B2795C7BE00667707 /* Mountaineering.jpg in Resources */,
+				A550A89E2795C7BE00667707 /* FastTyping.jpg in Resources */,
+				A550A89C2795C7BE00667707 /* Seascape.jpg in Resources */,
+				A550A89D2795C7BE00667707 /* FastTyping.mp4 in Resources */,
 				A5D4F8E427955D76006AF150 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

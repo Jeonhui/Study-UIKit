@@ -1,11 +1,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var clickCheck = false
     var body: some View {
-        Text("Hello, worldasdsada")
-            .padding()
-        Button(button){
-            
+        Button(action:{
+            self.clickCheck.toggle()
+        }){
+            Text("btn?")
+        }
+        if self.clickCheck{
+            Text("btn")
         }
     }
 }
