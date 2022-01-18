@@ -40,6 +40,10 @@ class ViewController: UIViewController {
         swipeRightMulti.direction = UISwipeGestureRecognizer.Direction.right
         swipeRightMulti.numberOfTouchesRequired = 2
         self.view.addGestureRecognizer(swipeRightMulti)
+        
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.doPinch(_:)))
+        self.view.addGestureRecognizer(pinch)
+        
     }
     
     @objc func respondToSwipeGesture(_ gesture: UISwipeGestureRecognizer){
@@ -70,6 +74,15 @@ class ViewController: UIViewController {
     
     @IBAction func pageChange(_ sender: Any) {
         imageView.image = UIImage(named: images[pageControl.currentPage])
+    }
+    
+    @objc func doPinch(_ pinch: UIPinchGestureRecognizer){
+        if pinch.state == UIPinchGestureRecognizer.State.ended{
+            imageView.transform = CGAffineTransform.identity
+        }else{
+            imageView.transform = imageView.transform.scaledBy(x: pinch.scale, y: pinch.scale)
+            pinch.scale = 1
+        }
     }
     
 
