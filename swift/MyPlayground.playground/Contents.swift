@@ -1,18 +1,12 @@
-import Swift
-import CoreGraphics
+enum School: String{
+    case primary = "유치원"
+    case elemnetary="초등학교"
+    case middle="중학교"
+    case high="고등학교"
+    case college="대학"
+    case university="대학교"
+    case graduate="대학원"
+}
 
-var name:String = "Jeonhui"
-var age:Int = 23
-var job:String = "IOS developer"
-var height = 181.5
-age = 99
-job = "Writer"
-print("\(type(of:height))")
-
-var person:(name:String,age:Int,height:Double)=("f",1,1.1)
-print(person)
-
-var EmptyArray1:[Any] = [Any]()
-var EmptyArray2:[Any] = Array<Any>()
-print(EmptyArray1)
-print(EmptyArray2)
+var highestEducation: School = School.university
+print(highestEducation.rawValue)
