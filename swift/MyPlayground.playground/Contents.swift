@@ -1,12 +1,18 @@
-enum School: String{
-    case primary = "유치원"
-    case elemnetary="초등학교"
-    case middle="중학교"
-    case high="고등학교"
-    case college="대학"
-    case university="대학교"
-    case graduate="대학원"
+prefix operator **
+prefix func ** (value: Int)->Int{
+    return value * value
 }
 
-var highestEducation: School = School.university
-print(highestEducation.rawValue)
+let minusFive: Int = -5
+let sqrtMunusFive: Int = **minusFive
+print(sqrtMunusFive)
+
+prefix func ! (value: String)->Bool{
+    return value.isEmpty
+}
+
+var stringValue = "Jeonhui"
+var isEmptyString: Bool = !stringValue
+print(isEmptyString)
+stringValue = ""
+print(!stringValue)
