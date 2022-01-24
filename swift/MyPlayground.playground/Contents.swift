@@ -1,18 +1,14 @@
-prefix operator **
-prefix func ** (value: Int)->Int{
-    return value * value
+var numbers:[Int] = [1,2,3]
+
+func nonReferenceParameter(_ arr:[Int]){
+    var copiedArr: [Int]=arr
+    copiedArr[1] = 1
+}
+func ReferenceParameter(_ arr: inout [Int]){
+    arr[1] = 1
 }
 
-let minusFive: Int = -5
-let sqrtMunusFive: Int = **minusFive
-print(sqrtMunusFive)
-
-prefix func ! (value: String)->Bool{
-    return value.isEmpty
-}
-
-var stringValue = "Jeonhui"
-var isEmptyString: Bool = !stringValue
-print(isEmptyString)
-stringValue = ""
-print(!stringValue)
+nonReferenceParameter(numbers)
+print(numbers)
+ReferenceParameter(&numbers)
+print(numbers)
