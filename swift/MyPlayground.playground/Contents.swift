@@ -1,14 +1,20 @@
-var numbers:[Int] = [1,2,3]
+typealias MoveFunc = (Int)->Int
 
-func nonReferenceParameter(_ arr:[Int]){
-    var copiedArr: [Int]=arr
-    copiedArr[1] = 1
-}
-func ReferenceParameter(_ arr: inout [Int]){
-    arr[1] = 1
+func functionForMove(_ shouldGoLeft: Bool)->MoveFunc{
+    func goRight(_ currentPosition: Int)->Int{
+        return currentPosition + 1
+    }
+    func goLeft(_ currentPosition: Int)->Int{
+        return currentPosition - 1
+    }
+    
+    return shouldGoLeft ? goLeft : goRight
 }
 
-nonReferenceParameter(numbers)
-print(numbers)
-ReferenceParameter(&numbers)
-print(numbers)
+var position: Int = -4
+let moveToZero: MoveFunc = functionForMove(position>0)
+
+while position != 0{
+    print("\(position)...")
+    position = moveToZero(position)
+}
