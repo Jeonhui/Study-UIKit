@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  study01
+//  chatBase
 //
 //  Created by 이전희 on 2022/01/25.
 //
@@ -24,6 +24,9 @@ struct LoginView: View {
     @State var isLoginMode = false
     @State var email = ""
     @State var password = ""
+    
+    @State var shouldShowImagePicker = false
+    
     var github:UIImage? = UIImage(named: "github_logo.png")
     
     var body: some View {
@@ -40,11 +43,25 @@ struct LoginView: View {
                     
                     if !isLoginMode{
                         Button{
-                            
+                            shouldShowImagePicker
+                                .toggle()
                         } label: {
-                            Image(systemName: "person.fill")
-                                .font(.system(size:64))
-                                .padding()
+                            VStack{
+                                if let image = self.image{
+                                    Image(uiImage:image)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 128, height: 128)
+                                        .cornerRadius(64)
+                                }else{
+                                    Image(systemName: "person.fill")
+                                        .font(.system(size:64))
+                                        .padding()
+                                        .foregroundColor(Color(.label))
+                                }
+                            }
+                            .overlay(RoundedRectangle(cornerRadius: 64).stroke(Color.black,lineWidth: 3)
+                            )
                         }
                     }
                     
@@ -75,8 +92,12 @@ struct LoginView: View {
             .navigationTitle(isLoginMode ? "Login":"Create Account")
             .background(Color(.init(white: 0,alpha: 0.05)).ignoresSafeArea())
         }.navigationViewStyle(StackNavigationViewStyle())
+            .fullScreenCover(isPresented: $shouldShowImagePicker, onDismiss: nil){
+                ImagePicker(image: $image)
+            }
     }
     
+    @State var image: UIImage?
     
     
     private func handleAction(){

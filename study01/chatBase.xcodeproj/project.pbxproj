@@ -7,24 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A51B199E279FCE330012BEAD /* study01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B199D279FCE330012BEAD /* study01App.swift */; };
+		A51B199E279FCE330012BEAD /* chatBaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B199D279FCE330012BEAD /* chatBaseApp.swift */; };
 		A51B19A0279FCE330012BEAD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B199F279FCE330012BEAD /* LoginView.swift */; };
 		A51B19A2279FCE350012BEAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51B19A1279FCE350012BEAD /* Assets.xcassets */; };
 		A51B19A5279FCE350012BEAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51B19A4279FCE350012BEAD /* Preview Assets.xcassets */; };
 		A51B19AD279FDF430012BEAD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A51B19AC279FDF430012BEAD /* FirebaseAuth */; };
 		A51B19AF279FDF430012BEAD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A51B19AE279FDF430012BEAD /* FirebaseStorage */; };
-		A51B19B1279FE0F70012BEAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A51B19B0279FE0F70012BEAD /* GoogleService-Info.plist */; };
 		A51B19B3279FE4740012BEAD /* github_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A51B19B2279FE4740012BEAD /* github_logo.png */; };
+		A5D5E00327A0E8CF004368E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5D5E00227A0E8CF004368E9 /* GoogleService-Info.plist */; };
+		A5D5E00927A0E9C7004368E9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5E00827A0E9C7004368E9 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A51B199A279FCE330012BEAD /* study01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = study01.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A51B199D279FCE330012BEAD /* study01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = study01App.swift; sourceTree = "<group>"; };
+		A51B199A279FCE330012BEAD /* chatBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51B199D279FCE330012BEAD /* chatBaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatBaseApp.swift; sourceTree = "<group>"; };
 		A51B199F279FCE330012BEAD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A51B19A1279FCE350012BEAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A51B19A4279FCE350012BEAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A51B19B0279FE0F70012BEAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A51B19B2279FE4740012BEAD /* github_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github_logo.png; sourceTree = "<group>"; };
+		A5D5E00227A0E8CF004368E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Users/ijeonhui/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5D5E00827A0E9C7004368E9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +45,7 @@
 		A51B1991279FCE330012BEAD = {
 			isa = PBXGroup;
 			children = (
-				A51B199C279FCE330012BEAD /* study01 */,
+				A51B199C279FCE330012BEAD /* chatBase */,
 				A51B199B279FCE330012BEAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,22 +53,23 @@
 		A51B199B279FCE330012BEAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A51B199A279FCE330012BEAD /* study01.app */,
+				A51B199A279FCE330012BEAD /* chatBase.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A51B199C279FCE330012BEAD /* study01 */ = {
+		A51B199C279FCE330012BEAD /* chatBase */ = {
 			isa = PBXGroup;
 			children = (
 				A51B19B2279FE4740012BEAD /* github_logo.png */,
-				A51B19B0279FE0F70012BEAD /* GoogleService-Info.plist */,
-				A51B199D279FCE330012BEAD /* study01App.swift */,
+				A51B199D279FCE330012BEAD /* chatBaseApp.swift */,
+				A5D5E00227A0E8CF004368E9 /* GoogleService-Info.plist */,
 				A51B199F279FCE330012BEAD /* LoginView.swift */,
 				A51B19A1279FCE350012BEAD /* Assets.xcassets */,
 				A51B19A3279FCE350012BEAD /* Preview Content */,
+				A5D5E00827A0E9C7004368E9 /* ImagePicker.swift */,
 			);
-			path = study01;
+			path = chatBase;
 			sourceTree = "<group>";
 		};
 		A51B19A3279FCE350012BEAD /* Preview Content */ = {
@@ -80,9 +83,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A51B1999279FCE330012BEAD /* study01 */ = {
+		A51B1999279FCE330012BEAD /* chatBase */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A51B19A8279FCE350012BEAD /* Build configuration list for PBXNativeTarget "study01" */;
+			buildConfigurationList = A51B19A8279FCE350012BEAD /* Build configuration list for PBXNativeTarget "chatBase" */;
 			buildPhases = (
 				A51B1996279FCE330012BEAD /* Sources */,
 				A51B1997279FCE330012BEAD /* Frameworks */,
@@ -92,13 +95,13 @@
 			);
 			dependencies = (
 			);
-			name = study01;
+			name = chatBase;
 			packageProductDependencies = (
 				A51B19AC279FDF430012BEAD /* FirebaseAuth */,
 				A51B19AE279FDF430012BEAD /* FirebaseStorage */,
 			);
 			productName = study01;
-			productReference = A51B199A279FCE330012BEAD /* study01.app */;
+			productReference = A51B199A279FCE330012BEAD /* chatBase.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A51B1995279FCE330012BEAD /* Build configuration list for PBXProject "study01" */;
+			buildConfigurationList = A51B1995279FCE330012BEAD /* Build configuration list for PBXProject "chatBase" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -132,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A51B1999279FCE330012BEAD /* study01 */,
+				A51B1999279FCE330012BEAD /* chatBase */,
 			);
 		};
 /* End PBXProject section */
@@ -143,9 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A51B19A5279FCE350012BEAD /* Preview Assets.xcassets in Resources */,
+				A5D5E00327A0E8CF004368E9 /* GoogleService-Info.plist in Resources */,
 				A51B19B3279FE4740012BEAD /* github_logo.png in Resources */,
 				A51B19A2279FCE350012BEAD /* Assets.xcassets in Resources */,
-				A51B19B1279FE0F70012BEAD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D5E00927A0E9C7004368E9 /* ImagePicker.swift in Sources */,
 				A51B19A0279FCE330012BEAD /* LoginView.swift in Sources */,
-				A51B199E279FCE330012BEAD /* study01App.swift in Sources */,
+				A51B199E279FCE330012BEAD /* chatBaseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +291,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"study01/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"chatBase/Preview Content\"";
 				DEVELOPMENT_TEAM = B2XR5545F7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -301,8 +305,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dlwjsgml02.study01;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = dlwjsgml02.chatBase;
+				PRODUCT_NAME = chatBase;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,7 +320,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"study01/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"chatBase/Preview Content\"";
 				DEVELOPMENT_TEAM = B2XR5545F7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -330,8 +334,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dlwjsgml02.study01;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = dlwjsgml02.chatBase;
+				PRODUCT_NAME = chatBase;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,7 +345,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A51B1995279FCE330012BEAD /* Build configuration list for PBXProject "study01" */ = {
+		A51B1995279FCE330012BEAD /* Build configuration list for PBXProject "chatBase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A51B19A6279FCE350012BEAD /* Debug */,
@@ -350,7 +354,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A51B19A8279FCE350012BEAD /* Build configuration list for PBXNativeTarget "study01" */ = {
+		A51B19A8279FCE350012BEAD /* Build configuration list for PBXNativeTarget "chatBase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A51B19A9279FCE350012BEAD /* Debug */,
