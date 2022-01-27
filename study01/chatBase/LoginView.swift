@@ -6,24 +6,6 @@
 //
 
 import SwiftUI
-import Firebase
-import FirebaseFirestore
-
-class FirebaseManager : NSObject{
-    let auth: Auth
-    let storage: Storage
-    let firestore: Firestore
-    
-    static let shared = FirebaseManager()
-    
-    override init(){
-        FirebaseApp.configure()
-        self.auth = Auth.auth()
-        self.storage = Storage.storage()
-        self.firestore = Firestore.firestore()
-        super.init()
-    }
-}
 
 struct LoginView: View {
     
@@ -36,7 +18,6 @@ struct LoginView: View {
     var body: some View {
         NavigationView{
             ScrollView{
-                
                 VStack(spacing:16){
                     Picker(selection: $isLoginMode, label: Text("Picker here")){
                         Text("Login")
@@ -71,10 +52,14 @@ struct LoginView: View {
                     
                     Group{
                         TextField("Email", text: $email).keyboardType(.emailAddress)
+                            .autocapitalization(.none)
                         SecureField("Password", text: $password)
                             .autocapitalization(.none)
-                    }                            .padding()
+                        
+                    }.padding()
                         .background(Color.white)
+                    
+                    
                     
                     Button{
                         handleAction()

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Volumes/T7/Github/IOS/study01/chatBase.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
