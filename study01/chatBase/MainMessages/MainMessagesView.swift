@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ChatUser{
     let uid, email, profileImageUrl: String
@@ -41,7 +42,7 @@ class MainMessgesViewModel: ObservableObject{
                     return
                 }
                 
-//                self.errorMessage = "Data: \(data.description)"
+                //                self.errorMessage = "Data: \(data.description)"
                 
                 let uid = data["uid"] as? String ?? ""
                 let email = data["email"] as? String ?? ""
@@ -73,13 +74,23 @@ struct MainMessagesView: View {
     
     private var customNavBar: some View{
         //custom nav bar
-        HStack{
+        HStack(spacing: 16){
             
-            Image(systemName: "person.fill")
-                .font(.system(size: 32, weight: .heavy))
+            WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? "")).resizable()
+                .scaledToFill()
+                .frame(width: 50,height: 50)
+                .clipped()
+                .cornerRadius(50)
+                .overlay(RoundedRectangle(cornerRadius: 44)
+                            .stroke(Color(.label), lineWidth: 1)
+                )
+                .shadow(radius:5)
             
+            //            Image(systemName: "person.fill")
+            //                .font(.system(size: 34, weight: .heavy))
             VStack(alignment: .leading, spacing: 4){
-                Text("\(vm.chatUser?.email ?? "email")")
+                let email = vm.chatUser?.email.replacingOccurrences(of: "@gmail.com", with: "") ?? "email"
+                Text(email)
                     .font(.system(size: 24,weight: .bold))
                 HStack{
                     Button {
@@ -114,7 +125,7 @@ struct MainMessagesView: View {
             }
     }
     
-
+    
     private var messagesView: some View{
         ScrollView{
             ForEach (0..<10,id:\.self){ num in
