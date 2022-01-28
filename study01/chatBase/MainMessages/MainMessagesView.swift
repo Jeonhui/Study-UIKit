@@ -7,10 +7,14 @@
 
 import SwiftUI
 
+struct ChatUser{
+    let uid, email, profileImageUrl: String
+}
+
 class MainMessgesViewModel: ObservableObject{
     
     @Published var errorMessage = ""
-
+    @Published var chatUser: ChatUser?
     
     init(){
         fetchCurrentUser()
@@ -30,17 +34,21 @@ class MainMessgesViewModel: ObservableObject{
                     return
                 }
                 
-                self.errorMessage = "123"
+                //self.errorMessage = "123"
                 
                 guard let data = snapshot?.data() else {
                     self.errorMessage = "No data found"
                     return
                 }
-                //print(data)
                 
-                self.errorMessage = "Data: \(data.description)"
+//                self.errorMessage = "Data: \(data.description)"
                 
+                let uid = data["uid"] as? String ?? ""
+                let email = data["email"] as? String ?? ""
+                let profileImageUrl = data["profileImageUrl"] as? String ?? ""
+                self.chatUser = ChatUser(uid: uid, email: email, profileImageUrl: profileImageUrl)
                 
+                //self.errorMessage = chatUser.profileImageUrl
             }
     }
 }
@@ -54,7 +62,7 @@ struct MainMessagesView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("CURRENT USER ID: \(vm.errorMessage)")
+                //Text("USER: \(vm.chatUser?.uid ?? "")")
                 customNavBar
                 messagesView
             }.overlay(
@@ -71,7 +79,7 @@ struct MainMessagesView: View {
                 .font(.system(size: 32, weight: .heavy))
             
             VStack(alignment: .leading, spacing: 4){
-                Text("USERNAME")
+                Text("\(vm.chatUser?.email ?? "email")")
                     .font(.system(size: 24,weight: .bold))
                 HStack{
                     Button {

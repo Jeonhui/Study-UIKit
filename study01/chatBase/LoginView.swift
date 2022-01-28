@@ -50,6 +50,7 @@ struct LoginView: View {
                         }
                     }
                     
+                    
                     Group{
                         TextField("Email", text: $email).keyboardType(.emailAddress)
                             .autocapitalization(.none)
