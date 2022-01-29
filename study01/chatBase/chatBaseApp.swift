@@ -11,7 +11,7 @@ import SwiftUI
 struct chatBaseApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            LoginView(didCompleteLoginProcess: {})
         }
     }
 }
