@@ -177,6 +177,7 @@ struct MainMessagesView: View {
             }.padding(.bottom, 60)
         }
     }
+    
     private var newMessageButton: some View{
         Button {
             
