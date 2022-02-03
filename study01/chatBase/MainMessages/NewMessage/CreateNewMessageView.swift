@@ -21,26 +21,29 @@ class CreateNewMessageViewModel:ObservableObject{
         FirebaseManager.shared.firestore.collection("users"
         )
             .getDocuments{
-            documentsSnapshot, error in
-            if let error = error{
-                self.errorMessage = "Failed to fetch users:\(error)"
-                print("Failed to fetch users: \(error)")
-                return
-            }
-            documentsSnapshot?.documents.forEach({snapshot in
-                let data = snapshot.data()
-                let user =  ChatUser(data: data)
-                if user.uid != FirebaseManager.shared.auth.currentUser?.uid{
-                    self.users.append(.init(data: data))
-                    
+                documentsSnapshot, error in
+                if let error = error{
+                    self.errorMessage = "Failed to fetch users:\(error)"
+                    print("Failed to fetch users: \(error)")
+                    return
                 }
-            })
-            //self.errorMessage = "Fetched users successfully"
-        }
+                documentsSnapshot?.documents.forEach({snapshot in
+                    let data = snapshot.data()
+                    let user =  ChatUser(data: data)
+                    if user.uid != FirebaseManager.shared.auth.currentUser?.uid{
+                        self.users.append(.init(data: data))
+                        
+                    }
+                })
+                //self.errorMessage = "Fetched users successfully"
+            }
     }
 }
 
 struct CreateNewMessageView: View {
+    
+    let didSelectNewUser: (ChatUser)->()
+    
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -54,6 +57,7 @@ struct CreateNewMessageView: View {
                 ForEach(vm.users){ user in
                     Button {
                         presentationMode.wrappedValue.dismiss()
+                        didSelectNewUser(user)
                     } label: {
                         HStack{
                             WebImage(url: URL(string:user.profileImageUrl))
@@ -89,6 +93,6 @@ struct CreateNewMessageView: View {
 
 struct CreateNewMessageView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateNewMessageView()
+        MainMessagesView()
     }
 }

@@ -13,11 +13,12 @@
 		A51B19A5279FCE350012BEAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51B19A4279FCE350012BEAD /* Preview Assets.xcassets */; };
 		A51B19B3279FE4740012BEAD /* github_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A51B19B2279FE4740012BEAD /* github_logo.png */; };
 		A55A234627A5037C00A36B2A /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A234527A5037C00A36B2A /* ChatUser.swift */; };
-		A5A0EA6727A3BF7200ECC2AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5A0EA6627A3BF7200ECC2AC /* GoogleService-Info.plist */; };
 		A5A12F2927A2675B003794A2 /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A12F2827A2675B003794A2 /* MainMessagesView.swift */; };
 		A5A12F2C27A27AD7003794A2 /* FirebaseManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A12F2B27A27AD7003794A2 /* FirebaseManger.swift */; };
 		A5A12F2F27A28A9D003794A2 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A5A12F2E27A28A9D003794A2 /* SDWebImageSwiftUI */; };
 		A5D5D22027AB8206000AD881 /* CreateNewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5D21F27AB8206000AD881 /* CreateNewMessageView.swift */; };
+		A5D5D22327ABA049000AD881 /* ChatLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5D22227ABA049000AD881 /* ChatLogView.swift */; };
+		A5D5D22527ABB412000AD881 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5D5D22427ABB412000AD881 /* GoogleService-Info.plist */; };
 		A5D5E00927A0E9C7004368E9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5E00827A0E9C7004368E9 /* ImagePicker.swift */; };
 		A5D5E00C27A1092B004368E9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A5D5E00B27A1092B004368E9 /* FirebaseAuth */; };
 		A5D5E00E27A1092B004368E9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A5D5E00D27A1092B004368E9 /* FirebaseFirestore */; };
@@ -32,10 +33,11 @@
 		A51B19A4279FCE350012BEAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A51B19B2279FE4740012BEAD /* github_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github_logo.png; sourceTree = "<group>"; };
 		A55A234527A5037C00A36B2A /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
-		A5A0EA6627A3BF7200ECC2AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Users/ijeonhui/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5A12F2827A2675B003794A2 /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
 		A5A12F2B27A27AD7003794A2 /* FirebaseManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManger.swift; sourceTree = "<group>"; };
 		A5D5D21F27AB8206000AD881 /* CreateNewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewMessageView.swift; sourceTree = "<group>"; };
+		A5D5D22227ABA049000AD881 /* ChatLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
+		A5D5D22427ABB412000AD881 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5D5E00827A0E9C7004368E9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				A55A234427A5035800A36B2A /* Model */,
-				A5A0EA6627A3BF7200ECC2AC /* GoogleService-Info.plist */,
+				A5D5D22427ABB412000AD881 /* GoogleService-Info.plist */,
 				A5A12F2A27A27ABE003794A2 /* Utils */,
 				A5A12F2727A2672E003794A2 /* MainMessages */,
 				A51B19B2279FE4740012BEAD /* github_logo.png */,
@@ -106,6 +108,7 @@
 		A5A12F2727A2672E003794A2 /* MainMessages */ = {
 			isa = PBXGroup;
 			children = (
+				A5D5D22127ABA033000AD881 /* Chat */,
 				A5D5D21E27AB81E7000AD881 /* NewMessage */,
 				A5A12F2827A2675B003794A2 /* MainMessagesView.swift */,
 			);
@@ -126,6 +129,14 @@
 				A5D5D21F27AB8206000AD881 /* CreateNewMessageView.swift */,
 			);
 			path = NewMessage;
+			sourceTree = "<group>";
+		};
+		A5D5D22127ABA033000AD881 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A5D5D22227ABA049000AD881 /* ChatLogView.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A51B19A5279FCE350012BEAD /* Preview Assets.xcassets in Resources */,
-				A5A0EA6727A3BF7200ECC2AC /* GoogleService-Info.plist in Resources */,
+				A5D5D22527ABB412000AD881 /* GoogleService-Info.plist in Resources */,
 				A51B19B3279FE4740012BEAD /* github_logo.png in Resources */,
 				A51B19A2279FCE350012BEAD /* Assets.xcassets in Resources */,
 			);
@@ -211,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A55A234627A5037C00A36B2A /* ChatUser.swift in Sources */,
+				A5D5D22327ABA049000AD881 /* ChatLogView.swift in Sources */,
 				A5D5E00927A0E9C7004368E9 /* ImagePicker.swift in Sources */,
 				A5A12F2927A2675B003794A2 /* MainMessagesView.swift in Sources */,
 				A51B19A0279FCE330012BEAD /* LoginView.swift in Sources */,
