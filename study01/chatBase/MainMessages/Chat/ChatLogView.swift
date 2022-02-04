@@ -12,6 +12,9 @@ struct FirebaseConstants{
     static let fromID = "fromID"
     static let toID = "toID"
     static let text = "text"
+    static let timestamp = "timestamp"
+    static let profileImageUrl = "profileImageUrl"
+    static let email = "email"
 }
 
 struct ChatMessage: Identifiable {
@@ -93,13 +96,17 @@ class ChatLogViewModel: ObservableObject{
             .collection(toID)
             .document()
         
-        let messageData = [FirebaseConstants.fromID:fromID, FirebaseConstants.toID:toID, FirebaseConstants.text: self.chatText, "timestamp": Timestamp()]  as [String : Any]
+        let messageData = [FirebaseConstants.fromID:fromID, FirebaseConstants.toID:toID, FirebaseConstants.text: self.chatText, FirebaseConstants.timestamp: Timestamp()]  as [String : Any]
         
         document.setData(messageData){error in
             if let error = error{
                 self.errorMessage = "Faild to save message into Firestore: \(error)"
             }
             print("Successfully saved current user sending message")
+            
+            
+            self.persistRecentMessage()
+            
             self.chatText = ""
             self.count += 1
         }
@@ -118,6 +125,40 @@ class ChatLogViewModel: ObservableObject{
         }
         
         
+    }
+    
+    private func persistRecentMessage(){
+        
+        guard let chatUser = chatUser else { return }
+        
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        
+        guard let toID = self.chatUser?.uid else{ return }
+        
+        let document = FirebaseManager.shared.firestore
+            .collection("recent_messages")
+            .document(uid)
+            .collection("messages")
+            .document(toID)
+        
+        let data = [
+            FirebaseConstants.timestamp:Timestamp(),
+            FirebaseConstants.text:self.chatText,
+            FirebaseConstants.fromID:uid,
+            FirebaseConstants.toID : toID,
+            FirebaseConstants.profileImageUrl : chatUser.profileImageUrl,
+            FirebaseConstants.email: chatUser.email
+        ] as [String : Any]
+        
+        //you'll need to save another very similar dictionary for the recipient of this message ... how?
+        
+        document.setData(data){ error in
+            if let error = error {
+                self.errorMessage = "Failed to save recent message: \(error)"
+                print("Failed to save recent message: \(error)")
+                return
+            }
+        }
     }
     
     @Published var count = 0

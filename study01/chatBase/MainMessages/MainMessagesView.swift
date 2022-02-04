@@ -7,6 +7,27 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import Firebase
+
+struct RecentMessage: Identifiable{
+    var id: String {documentID}
+    
+    let documentID: String
+    let text, email: String
+    let fromID, toID: String
+    let profileImageUrl: String
+    let timestamp: Timestamp
+    
+    init(documentID: String, data: [String: Any]){
+        self.documentID = documentID
+        self.text = data[FirebaseConstants.text] as? String ?? ""
+        self.fromID = data[FirebaseConstants.fromID] as? String ?? ""
+        self.toID = data[FirebaseConstants.toID] as? String ?? ""
+        self.profileImageUrl = data[FirebaseConstants.profileImageUrl] as? String ?? ""
+        self.email = data[FirebaseConstants.email] as? String ?? ""
+        self.timestamp = data[FirebaseConstants.timestamp] as? Timestamp ?? Timestamp(date: Date())
+    }
+}
 
 class MainMessagesViewModel: ObservableObject {
     
@@ -20,6 +41,31 @@ class MainMessagesViewModel: ObservableObject {
         }
         
         fetchCurrentUser()
+        fetchRecentMessages()
+    }
+    
+    @Published var recentMessages = [RecentMessage]()
+    
+    private func fetchRecentMessages(){
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+    
+        FirebaseManager.shared.firestore
+            .collection("recent_messages")
+            .document(uid)
+            .collection("messages")
+            .addSnapshotListener { querySnapshot, error in
+                if let error =  error {
+                    self.errorMessage = "Failed to listen for recent messages \(error)"
+                    return
+                }
+                querySnapshot?.documentChanges.forEach({ change in
+//                    if change.type == .added {
+                        let docID = change.document.documentID
+                        self.recentMessages.append(.init(documentID: docID, data: change.document.data()))
+//                    }
+                })
+                
+            }
     }
     
     func fetchCurrentUser() {
@@ -140,7 +186,7 @@ struct MainMessagesView: View {
     
     private var messagesView: some View {
         ScrollView {
-            ForEach(0..<10, id: \.self) { num in
+            ForEach(vm.recentMessages) { recentMessage in
                 VStack {
                     NavigationLink {
                         Text("Destination")
@@ -155,9 +201,10 @@ struct MainMessagesView: View {
                             
                             
                             VStack(alignment: .leading) {
-                                Text("Username")
+                                Text(recentMessage.email)
                                     .font(.system(size: 16, weight: .bold))
-                                Text("Message sent to user")
+                                    .foregroundColor(Color(.label))
+                                Text(recentMessage.text)
                                     .font(.system(size: 14))
                                     .foregroundColor(Color(.lightGray))
                             }
