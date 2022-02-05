@@ -7,31 +7,7 @@
 
 import SwiftUI
 import Firebase
-
-struct FirebaseConstants{
-    static let fromID = "fromID"
-    static let toID = "toID"
-    static let text = "text"
-    static let timestamp = "timestamp"
-    static let profileImageUrl = "profileImageUrl"
-    static let email = "email"
-}
-
-struct ChatMessage: Identifiable {
-    
-    var id: String { documentID }
-    
-    let documentID: String
-    
-    let fromID, toID, text:String
-    
-    init(documentID: String, data: [String: Any]){
-        self.documentID = documentID
-        self.fromID = data[FirebaseConstants.fromID] as? String ?? ""
-        self.toID = data[FirebaseConstants.toID] as? String ?? ""
-        self.text = data[FirebaseConstants.text] as? String ?? ""
-    }
-}
+import FirebaseFirestoreSwift
 
 class ChatLogViewModel: ObservableObject{
     
@@ -40,18 +16,23 @@ class ChatLogViewModel: ObservableObject{
     
     @Published var chatMessges = [ChatMessage]()
     
-    let chatUser: ChatUser?
+    var chatUser: ChatUser?
     
     init(chatUser: ChatUser?){
         self.chatUser = chatUser
         fetchMessages()
     }
     
-    private func fetchMessages(){
+    var firestoreListener: ListenerRegistration?
+    
+    func fetchMessages(){
         guard let fromID = FirebaseManager.shared.auth.currentUser?.uid else { return }
         guard let toID = chatUser?.uid else { return }
         
-        FirebaseManager.shared.firestore
+        firestoreListener?.remove()
+        chatMessges.removeAll()
+        
+        firestoreListener = FirebaseManager.shared.firestore
             .collection("messages")
             .document(fromID)
             .collection(toID)
@@ -66,8 +47,9 @@ class ChatLogViewModel: ObservableObject{
                 querySnapshot?.documentChanges.forEach({
                     change in
                     if change.type == .added{
-                        let data = change.document.data()
-                        self.chatMessges.append(.init(documentID: change.document.documentID, data: data))
+                        if let data = try? change.document.data(as: ChatMessage.self){
+                            self.chatMessges.append(data)
+                        }
                     }
                 })
                 
@@ -167,12 +149,12 @@ class ChatLogViewModel: ObservableObject{
 
 struct ChatLogView: View {
     
-    let chatUser: ChatUser?
-    
-    init(chatUser: ChatUser?){
-        self.chatUser = chatUser
-        self.vm = ChatLogViewModel(chatUser: chatUser)
-    }
+//    let chatUser: ChatUser?
+//
+//    init(chatUser: ChatUser?){
+//        self.chatUser = chatUser
+//        self.vm = ChatLogViewModel(chatUser: chatUser)
+//    }
     
     @ObservedObject var vm:ChatLogViewModel
     
@@ -181,8 +163,11 @@ struct ChatLogView: View {
             messagesView
             Text(vm.errorMessage)
         }
-        .navigationTitle(chatUser?.email ?? "")
+        .navigationTitle(vm.chatUser?.email ?? "")
         .navigationBarTitleDisplayMode(.inline) //Title 위 쪽에 넣기
+        .onDisappear {
+            vm.firestoreListener?.remove()
+        }
 //        .navigationBarItems(trailing: Button(action: {
 //            vm.count += 1
 //        }, label: {
@@ -301,8 +286,9 @@ private struct DescriptionPlaceholder: View{
 
 struct ChatLogView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{
-            ChatLogView(chatUser: .init(data:["uid":"3OUZ8IGHyKhWKs2Tn9YRHdFlcL23","email":"dlwjsgml02@naver.com","profileImageUrl":"https://firebasestorage.googleapis.com:443/v0/b/chattest-b3068.appspot.com/o/3OUZ8IGHyKhWKs2Tn9YRHdFlcL23?alt=media&token=6bd3c9aa-6ca5-4577-8ab0-1c57c2c39f86"]))
-        }
+        MainMessagesView()
+//        NavigationView{
+//            ChatLogView(chatUser: .init(data:["uid":"3OUZ8IGHyKhWKs2Tn9YRHdFlcL23","email":"dlwjsgml02@naver.com","profileImageUrl":"https://firebasestorage.googleapis.com:443/v0/b/chattest-b3068.appspot.com/o/3OUZ8IGHyKhWKs2Tn9YRHdFlcL23?alt=media&token=6bd3c9aa-6ca5-4577-8ab0-1c57c2c39f86"]))
+//        }
     }
 }

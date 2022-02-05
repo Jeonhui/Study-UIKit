@@ -43,8 +43,6 @@ class CreateNewMessageViewModel:ObservableObject{
 struct CreateNewMessageView: View {
     
     let didSelectNewUser: (ChatUser)->()
-    
-    
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var vm = CreateNewMessageViewModel()
