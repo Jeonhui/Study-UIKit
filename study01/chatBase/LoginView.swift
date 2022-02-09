@@ -5,35 +5,52 @@
 //  Created by 이전희 on 2022/01/25.
 //
 
+//loginView
+
 import SwiftUI
 import Firebase
 
 struct LoginView: View {
     
     let didCompleteLoginProcess: () -> ()
+    //함수로 반환
+    //(입력)->(출력)
+    
     
     @State private var isLoginMode = false
+    //로그인 모드 (bool)
     @State private var email = ""
     @State private var password = ""
+    //email, password 입력 저장
+    
     
     @State private var shouldShowImagePicker = false
+    //imagePicker 실행 (bool)
     
     var body: some View {
         NavigationView {
             ScrollView {
+                
                 VStack(spacing: 16) {
+                    //Vertical 수직(세로)
+                    
                     Picker(selection: $isLoginMode, label: Text("Picker here")) {
                         Text("Login")
                             .tag(true)
                         Text("Create Account")
                             .tag(false)
-                    }.pickerStyle(SegmentedPickerStyle())
                         
+                    }.pickerStyle(SegmentedPickerStyle())
+                    //selection $선택
+                    //picker 선택 (login or create Account)
+                    
+                    
                     if !isLoginMode {
+                        //로그인 모드가 아니면
                         Button {
                             shouldShowImagePicker.toggle()
+                            //ImagePicker True
                         } label: {
-                            
                             VStack {
                                 if let image = self.image {
                                     Image(uiImage: image)
@@ -41,17 +58,19 @@ struct LoginView: View {
                                         .scaledToFill()
                                         .frame(width: 128, height: 128)
                                         .cornerRadius(64)
+                                    //선택된 이미지 저장
+                                    //크기 맞추기
                                 } else {
                                     Image(systemName: "person.fill")
                                         .font(.system(size: 64))
                                         .padding()
                                         .foregroundColor(Color(.label))
+                                    //기본 이미지
                                 }
                             }
                             .overlay(RoundedRectangle(cornerRadius: 64)
                                         .stroke(Color.black, lineWidth: 3)
-                            )
-                            
+                            )//테두리 설정
                         }
                     }
                     
@@ -60,6 +79,7 @@ struct LoginView: View {
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
                         SecureField("Password", text: $password)
+                        // 입력을 받음
                     }
                     .padding(12)
                     .background(Color.white)
@@ -75,9 +95,7 @@ struct LoginView: View {
                                 .font(.system(size: 14, weight: .semibold))
                             Spacer()
                         }.background(Color.blue)
-                        
-                    }
-                    
+                    } //login 및 create account 버튼
                     Text(self.loginStatusMessage)
                         .foregroundColor(.red)
                 }
@@ -99,11 +117,11 @@ struct LoginView: View {
     
     private func handleAction() {
         if isLoginMode {
-//            print("Should log into Firebase with existing credentials")
             loginUser()
+            //login mode true-> login
         } else {
             createNewAccount()
-//            print("Register a new account inside of Firebase Auth and then store image in Storage somehow....")
+            //login mode false-> create account
         }
     }
     
@@ -147,7 +165,9 @@ struct LoginView: View {
     }
     
     private func persistImageToStorage() {
-//        let filename = UUID().uuidString
+        // 프로필 이미지 불러오기
+        
+        //        let filename = UUID().uuidString
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         let ref = FirebaseManager.shared.storage.reference(withPath: uid)
         guard let imageData = self.image?.jpegData(compressionQuality: 0.5) else { return }

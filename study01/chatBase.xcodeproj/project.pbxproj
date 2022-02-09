@@ -13,6 +13,7 @@
 		A51B19A5279FCE350012BEAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51B19A4279FCE350012BEAD /* Preview Assets.xcassets */; };
 		A51B19B3279FE4740012BEAD /* github_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A51B19B2279FE4740012BEAD /* github_logo.png */; };
 		A55A234627A5037C00A36B2A /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A234527A5037C00A36B2A /* ChatUser.swift */; };
+		A5927B4027B3960B00D51BC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5927B3F27B3960B00D51BC8 /* GoogleService-Info.plist */; };
 		A5A12F2927A2675B003794A2 /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A12F2827A2675B003794A2 /* MainMessagesView.swift */; };
 		A5A12F2C27A27AD7003794A2 /* FirebaseManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A12F2B27A27AD7003794A2 /* FirebaseManger.swift */; };
 		A5A12F2F27A28A9D003794A2 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A5A12F2E27A28A9D003794A2 /* SDWebImageSwiftUI */; };
@@ -25,7 +26,6 @@
 		A5B5C59E27AE56D7000A025D /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B5C59D27AE56D7000A025D /* FirebaseConstants.swift */; };
 		A5D5D22027AB8206000AD881 /* CreateNewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5D21F27AB8206000AD881 /* CreateNewMessageView.swift */; };
 		A5D5D22327ABA049000AD881 /* ChatLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5D22227ABA049000AD881 /* ChatLogView.swift */; };
-		A5D5D22527ABB412000AD881 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5D5D22427ABB412000AD881 /* GoogleService-Info.plist */; };
 		A5D5E00927A0E9C7004368E9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5E00827A0E9C7004368E9 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,7 @@
 		A51B19A4279FCE350012BEAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A51B19B2279FE4740012BEAD /* github_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github_logo.png; sourceTree = "<group>"; };
 		A55A234527A5037C00A36B2A /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
+		A5927B3F27B3960B00D51BC8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5A12F2827A2675B003794A2 /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
 		A5A12F2B27A27AD7003794A2 /* FirebaseManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManger.swift; sourceTree = "<group>"; };
 		A5B5C59027AE42A6000A025D /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		A5B5C59D27AE56D7000A025D /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		A5D5D21F27AB8206000AD881 /* CreateNewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewMessageView.swift; sourceTree = "<group>"; };
 		A5D5D22227ABA049000AD881 /* ChatLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
-		A5D5D22427ABB412000AD881 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5D5E00827A0E9C7004368E9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,8 +83,8 @@
 		A51B199C279FCE330012BEAD /* chatBase */ = {
 			isa = PBXGroup;
 			children = (
+				A5927B3F27B3960B00D51BC8 /* GoogleService-Info.plist */,
 				A55A234427A5035800A36B2A /* Model */,
-				A5D5D22427ABB412000AD881 /* GoogleService-Info.plist */,
 				A5A12F2A27A27ABE003794A2 /* Utils */,
 				A5A12F2727A2672E003794A2 /* MainMessages */,
 				A51B19B2279FE4740012BEAD /* github_logo.png */,
@@ -220,7 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A51B19A5279FCE350012BEAD /* Preview Assets.xcassets in Resources */,
-				A5D5D22527ABB412000AD881 /* GoogleService-Info.plist in Resources */,
+				A5927B4027B3960B00D51BC8 /* GoogleService-Info.plist in Resources */,
 				A51B19B3279FE4740012BEAD /* github_logo.png in Resources */,
 				A51B19A2279FCE350012BEAD /* Assets.xcassets in Resources */,
 			);
