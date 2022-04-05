@@ -1,9 +1,6 @@
-//
-//  ScrumsView.swift
-//  scrumdinger
-//
-//  Created by 이전희 on 2022/03/30.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+*/
 
 import SwiftUI
 
@@ -36,3 +33,4 @@ struct ScrumsView_Previews: PreviewProvider {
         }
     }
 }
+
