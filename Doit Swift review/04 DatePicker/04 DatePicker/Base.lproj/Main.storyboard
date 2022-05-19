@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ZpM-Gi-yiA">
-                                <rect key="frame" x="47" y="256.5" width="320" height="383"/>
+                                <rect key="frame" x="47" y="289.5" width="320" height="317"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 시간 : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxG-EQ-N6c">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
@@ -38,12 +38,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqW-bP-Sne">
-                                        <rect key="frame" x="0.0" y="347" width="320" height="36"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -55,7 +49,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lblCnt" destination="lqW-bP-Sne" id="Mcw-Ju-6Jy"/>
                         <outlet property="lblCurrentTime" destination="bxG-EQ-N6c" id="FOz-b7-SKr"/>
                         <outlet property="lblPickerTime" destination="oKt-Cc-KYq" id="G5t-Hm-Fad"/>
                     </connections>
