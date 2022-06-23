@@ -2,6 +2,15 @@ import SwiftUI
 
 struct MyTextView:View{
     
+    @Binding
+    var isActivated:Bool
+    
+    //바인딩하려면 생성자
+    //.constant(true) 기본값 지정
+    init(isActivated: Binding<Bool> = .constant(false)){
+        _isActivated = isActivated
+    }
+    
     @State
     private var index: Int = 0
     
@@ -22,7 +31,11 @@ struct MyTextView:View{
                 .font(.system(size: 30))
                 .fontWeight(.semibold)
                 .frame(minWidth:0, maxWidth: .infinity,minHeight:0,maxHeight: .infinity)
-            
+            Text("활성화 상태: \(String(isActivated))")
+                .font(.system(size: 30))
+                .fontWeight(.semibold)
+                .foregroundColor(self.isActivated ? .yellow : .white)
+                .background(self.isActivated ? .blue : .black)
             Spacer()
         }.background(backgroundColors[index])
             .onTapGesture {
