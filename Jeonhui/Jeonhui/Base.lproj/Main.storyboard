@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Jeonhui" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cQ-mx-nf9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkr-t0-vWQ">
+                                <rect key="frame" x="174.5" y="781" width="65.5" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="ZQe-Ih-WRX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="popup"/>
+                                <connections>
+                                    <action selector="onPopUpViewBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="358-85-Zkm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zkr-t0-vWQ" secondAttribute="bottom" constant="50" id="Kwa-zd-2vV"/>
+                            <constraint firstItem="7cQ-mx-nf9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="PPr-ib-IL9"/>
+                            <constraint firstItem="7cQ-mx-nf9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vnb-v6-Iqu"/>
+                            <constraint firstItem="7cQ-mx-nf9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="a2T-Us-wnI"/>
+                            <constraint firstItem="7cQ-mx-nf9" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="boS-12-OL3"/>
+                            <constraint firstItem="Zkr-t0-vWQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zLH-wp-KCm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myWebView" destination="7cQ-mx-nf9" id="En1-Vg-IIq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="80"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="Ga6-u7-gjI">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Bh-pJ-ofI" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="popup" id="G6H-4p-oXN" customClass="PopUpViewController" customModule="Jeonhui" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d04-DF-0wf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45o-43-60W">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="onBgCloseBtn:" destination="G6H-4p-oXN" eventType="touchUpInside" id="y3P-al-YJb"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2f-mc-1hb">
+                                <rect key="frame" x="20" y="303" width="374" height="300"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UbJ-0i-aln">
+                                        <rect key="frame" x="30" y="32" width="314" height="236"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obo-p8-uoz">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="31"/>
+                                                <color key="tintColor" systemColor="systemCyanColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Portfolio"/>
+                                                <connections>
+                                                    <action selector="loadPortfolio:" destination="G6H-4p-oXN" eventType="touchUpInside" id="IoY-MM-rgL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHR-ak-eme">
+                                                <rect key="frame" x="0.0" y="41" width="314" height="31"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Github"/>
+                                                <connections>
+                                                    <action selector="loadGithub:" destination="G6H-4p-oXN" eventType="touchUpInside" id="UVw-jB-vdd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meF-ZA-8Ru">
+                                                <rect key="frame" x="0.0" y="82" width="314" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="wordle"/>
+                                                <connections>
+                                                    <action selector="loadWordle:" destination="G6H-4p-oXN" eventType="touchUpInside" id="KKC-Wg-Xxk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76m-Tb-oNT">
+                                                <rect key="frame" x="0.0" y="123" width="314" height="31"/>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="google"/>
+                                                <connections>
+                                                    <action selector="loadGoogle:" destination="G6H-4p-oXN" eventType="touchUpInside" id="Z6g-Pk-4Km"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvP-7Z-bPn">
+                                                <rect key="frame" x="0.0" y="164" width="314" height="31"/>
+                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="naver"/>
+                                                <connections>
+                                                    <action selector="loadNaver:" destination="G6H-4p-oXN" eventType="touchUpInside" id="8Ml-zZ-23L"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uA3-8e-LGN">
+                                                <rect key="frame" x="0.0" y="205" width="314" height="31"/>
+                                                <color key="tintColor" systemColor="systemGray2Color"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="apple"/>
+                                                <connections>
+                                                    <action selector="loadApple:" destination="G6H-4p-oXN" eventType="touchUpInside" id="aOL-L4-9XK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="UbJ-0i-aln" firstAttribute="centerY" secondItem="l2f-mc-1hb" secondAttribute="centerY" id="0lR-5f-1jF"/>
+                                    <constraint firstAttribute="trailing" secondItem="UbJ-0i-aln" secondAttribute="trailing" constant="30" id="I6u-0M-V4U"/>
+                                    <constraint firstAttribute="height" constant="300" id="Iw3-zg-tUu"/>
+                                    <constraint firstItem="UbJ-0i-aln" firstAttribute="leading" secondItem="l2f-mc-1hb" secondAttribute="leading" constant="30" id="TVj-rq-cnA"/>
+                                    <constraint firstItem="UbJ-0i-aln" firstAttribute="centerX" secondItem="l2f-mc-1hb" secondAttribute="centerX" id="daV-ZC-ZqC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y8y-1h-qD5"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="y8y-1h-qD5" firstAttribute="trailing" secondItem="l2f-mc-1hb" secondAttribute="trailing" constant="20" id="7ye-Y8-Fc0"/>
+                            <constraint firstItem="l2f-mc-1hb" firstAttribute="leading" secondItem="y8y-1h-qD5" secondAttribute="leading" constant="20" id="DXz-A1-P2o"/>
+                            <constraint firstItem="y8y-1h-qD5" firstAttribute="bottom" secondItem="45o-43-60W" secondAttribute="bottom" id="JBk-6K-s18"/>
+                            <constraint firstItem="l2f-mc-1hb" firstAttribute="centerY" secondItem="45o-43-60W" secondAttribute="centerY" id="RZW-z5-f6w"/>
+                            <constraint firstItem="45o-43-60W" firstAttribute="top" secondItem="y8y-1h-qD5" secondAttribute="top" id="RwP-13-cD5"/>
+                            <constraint firstItem="l2f-mc-1hb" firstAttribute="centerX" secondItem="d04-DF-0wf" secondAttribute="centerX" id="c2H-GJ-utS"/>
+                            <constraint firstItem="y8y-1h-qD5" firstAttribute="trailing" secondItem="45o-43-60W" secondAttribute="trailing" id="dPZ-YX-QaO"/>
+                            <constraint firstItem="45o-43-60W" firstAttribute="leading" secondItem="y8y-1h-qD5" secondAttribute="leading" id="hjX-WT-k7Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myView" destination="l2f-mc-1hb" id="vr3-cY-pa8"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="710" y="80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,25 @@
+//
+//  ViewController.swift
+//  searchImage
+//
+//  Created by 이전희 on 2022/06/25.
+//
+
+import UIKit
+
+class UserListVC: UIViewController {
+    var vcTitle:String = ""{
+        didSet{
+            print("UserListVC: \(vcTitle)")
+            self.title = vcTitle
+        }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("UserListVC - viewDidLoad()")
+        
+    }
+
+}
+

@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r4b-44-tpc">
+                            <wkWebView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="r4b-44-tpc">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -27,7 +26,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOf-cH-rbY">
-                                <rect key="frame" x="152.5" y="733" width="109" height="29"/>
+                                <rect key="frame" x="152.5" y="803" width="109" height="29"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" cornerStyle="large">
@@ -53,8 +52,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="r4b-44-tpc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5fF-zr-hiV"/>
                             <constraint firstItem="vOf-cH-rbY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bEM-rl-ARV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vOf-cH-rbY" secondAttribute="bottom" constant="100" id="dfQ-La-T5K"/>
+                            <constraint firstItem="r4b-44-tpc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="db7-Xf-hTe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r4b-44-tpc" secondAttribute="trailing" id="pQz-Sv-qg1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vOf-cH-rbY" secondAttribute="bottom" constant="30" id="rgq-c8-bif"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r4b-44-tpc" secondAttribute="bottom" id="wXi-Lc-TYd"/>
                         </constraints>
                     </view>
                     <connections>

@@ -8,7 +8,11 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+//프로토콜 델리게이트 (리모컨)
+
+class ViewController: UIViewController, popupDelegate{
+
+    
     
     @IBOutlet var createPopUpBtn: UIButton!
     @IBOutlet var myWebView: WKWebView!
@@ -16,6 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.loadWebPage("https://www.google.com")
+        
     }
     
     @IBAction func onCreatePopUpBtnClicked(_ sender: UIButton) {
@@ -30,13 +36,28 @@ class ViewController: UIViewController {
         // 뷰 컨트롤러가 사라지는 스타일
         customPopVC.modalTransitionStyle = .crossDissolve
         
+        // 비동기식
         customPopVC.moveBtnCompletionClosure = {
             print("호출됨")
-            let myChannelUrl = URL(string: "www.google.com")
-            self.myWebView.load(URLRequest(url: myChannelUrl!))
+            self.loadWebPage("https://www.naver.com")
         }
         
+        customPopVC.myPopUpDelegate = self
+        
         self.present(customPopVC, animated: true,completion: nil)
+    }
+    
+    private func loadWebPage(_ url: String) {
+            guard let myUrl = URL(string: url) else {
+                return
+            }
+            let request = URLRequest(url: myUrl)
+            myWebView.load(request)
+        }
+    //MARK: - Delegate methods
+    func onMove2() {
+        print("viewController - onMove2")
+        loadWebPage("https://www.github.com")
     }
     
 }

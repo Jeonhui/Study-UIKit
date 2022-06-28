@@ -14,7 +14,6 @@ import WebKit
 struct MyWebview: UIViewRepresentable{
     var urlToLoad: String = "www.naver.com"
     
-    
     // ui view 만들기
     func makeUIView(context: Context) -> some WKWebView {
         guard let url = URL(string: self.urlToLoad) else{
@@ -27,10 +26,11 @@ struct MyWebview: UIViewRepresentable{
         //웹뷰를 반환
         return webview
     }
+    
     // update ui view
     func updateUIView(_ uiView: UIViewType, context: UIViewRepresentableContext<MyWebview>) {
-        
     }
+    
 }
 
 struct MyWebview_Previews: PreviewProvider {
